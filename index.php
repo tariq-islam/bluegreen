@@ -56,6 +56,11 @@
     </nav>
     <div class="container-fluid">
       <div class="row">
+<div style="width:800px; margin:0 auto;">
+          <p>
+            <img src="usda2.jpg">
+          </p>
+        </div>
         <div class="col-md-12">
           <ol class="breadcrumb">
             <li><a href="#">Home</a></li>
@@ -91,11 +96,6 @@
           <h2>Application Example</h2>
           <p>
             <img src="image.php">
-          </p>
-        </div>
-        <div>
-          <p>
-            <img src="usda1.png">
           </p>
         </div>
       </div>
