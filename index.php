@@ -93,6 +93,11 @@
             <img src="image.php">
           </p>
         </div>
+        <div>
+          <p>
+            <img src="usda1.png">
+          </p>
+        </div>
       </div>
         </div><!-- /col -->
       </div><!-- /row -->
