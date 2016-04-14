@@ -58,7 +58,7 @@
       <div class="row">
 <div style="width:800px; margin:0 auto;">
           <p>
-            <img src="usda1.jpg">
+            <img src="">
           </p>
         </div>
         <div class="col-md-12">
