@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  annotations:
+    openshift.io/generated-by: OpenShiftWebConsole
+  labels:
+    app: bluegreen
+  name: bluegreen
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: bluegreen:latest
+  postCommit: {}
+  resources: {}
+  runPolicy: Serial
+  source:
+    git:
+      ref: master
+      uri: https://github.com/tariq-islam/bluegreen
+    type: Git
+  strategy:
+    jenkinsPipelineStrategy:
+      jenkinsfilePath: Jenkinsfile
+    type: JenkinsPipeline
+status:
