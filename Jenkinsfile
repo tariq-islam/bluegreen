@@ -1,4 +1,4 @@
-node {
+node ('jenkins-jnlp') {
   stage 'build'
   openshiftBuild(buildConfig: 'bluegreen', showBildLogs: 'true')
   
