@@ -1,4 +1,4 @@
-node ('agent') {
+node {
   stage 'build'
   openshiftBuild(buildConfig: 'bluegreen', showBildLogs: 'true')
   
