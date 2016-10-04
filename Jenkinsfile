@@ -1,6 +1,6 @@
 node ('master') {
   stage 'build'
-  openshiftBuild(buildConfig: 'bluegreen', showBildLogs: 'true')
+  openshiftBuild(buildConfig: 'bluegreen', showBuildLogs: 'true')
   
   stage 'deploy'
   openshiftDeploy(deploymentConfig: 'bluegreen')
