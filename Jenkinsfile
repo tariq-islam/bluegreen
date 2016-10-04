@@ -1,4 +1,4 @@
-node ('master') {
+node {
   stage 'build'
   openshiftBuild(buildConfig: 'bluegreen', showBuildLogs: 'true')
   
