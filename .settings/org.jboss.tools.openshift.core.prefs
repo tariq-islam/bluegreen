@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+org.jboss.tools.openshift.Connection=https\://openshift-dev@10.1.2.2\:8443
+org.jboss.tools.openshift.DeployProject=bluegreen
+org.jboss.tools.openshift.PodPath=
+org.jboss.tools.openshift.Service=sample-project@php
+org.jboss.tools.openshift.SourcePath=${workspace_loc\:/bluegreen}
