@@ -21,4 +21,3 @@ spec:
     jenkinsPipelineStrategy:
       jenkinsfilePath: Jenkinsfile
     type: JenkinsPipeline
-status:
