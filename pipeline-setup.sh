@@ -34,6 +34,6 @@ oc new-app --name=bluegreen "$repository_path"
 oc expose service bluegreen
 oc new-app "$jenkins_image" -p JENKINS_PASSWORD=password
 oc delete bc bluegreen
-oc create -f https://raw.githubusercontent.com/tariq-islam/bluegreen/bluegreen-bc.yml
+oc create -f https://raw.githubusercontent.com/tariq-islam/bluegreen/master/bluegreen-bc.yml
 oc new-project app-qa --display-name="Application QA Environment"
 oc new-project app-prod --display-name="Application Production Environment"
