@@ -14,7 +14,6 @@ spec:
   runPolicy: Serial
   source:
     git:
-      ref: master
       uri: https://github.com/tariq-islam/bluegreen
     type: Git
   strategy:
