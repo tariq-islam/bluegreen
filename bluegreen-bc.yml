@@ -3,15 +3,8 @@ kind: BuildConfig
 metadata:
   labels:
     app: bluegreen
-  name: bluegreen
+  name: bluegreen-pipeline
 spec:
-  output:
-    to:
-      kind: ImageStreamTag
-      name: bluegreen:latest
-  postCommit: {}
-  resources: {}
-  runPolicy: Serial
   source:
     git:
       uri: https://github.com/tariq-islam/bluegreen
