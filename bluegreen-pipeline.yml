@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  labels:
+    app: bluegreen
+  name: bluegreen-pipeline
+spec:
+  source:
+    git:
+      uri: https://github.com/tariq-islam/bluegreen
+    type: Git
+  strategy:
+    jenkinsPipelineStrategy:
+      jenkinsfilePath: Jenkinsfile
+    type: JenkinsPipeline

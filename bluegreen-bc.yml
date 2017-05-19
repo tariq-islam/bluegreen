@@ -3,13 +3,25 @@ kind: BuildConfig
 metadata:
   labels:
     app: bluegreen
-  name: bluegreen-pipeline
+  name: bluegreen
 spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: bluegreen:latest
+  runPolicy: Serial
   source:
     git:
       uri: https://github.com/tariq-islam/bluegreen
     type: Git
   strategy:
-    jenkinsPipelineStrategy:
-      jenkinsfilePath: Jenkinsfile
-    type: JenkinsPipeline
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: php:7.0
+        namespace: openshift
+    type: Source
+  triggers:
+  - type: ConfigChange
+  - imageChange:
+    type: ImageChange
