@@ -30,9 +30,9 @@ fi
 
 oc login "$hostname" --insecure-skip-tls-verify -u "$username"
 oc new-project app-dev --display-name="Application Development Environment"
-oc new-app --name=bluegreen "$repository_path" && oc expose svc bluegreen
 oc new-app "$jenkins_image"
-oc delete bc bluegreen
+oc create -f https://raw.githubusercontent.com/tariq-islam/bluegreen/master/bluegreen-is.yml
 oc create -f https://raw.githubusercontent.com/tariq-islam/bluegreen/master/bluegreen-bc.yml
+oc create -f https://raw.githubusercontent.com/tariq-islam/bluegreen/master/bluegreen-pipeline.yml
 oc new-project app-qa --display-name="Application QA Environment"
 oc new-project app-prod --display-name="Application Production Environment"
