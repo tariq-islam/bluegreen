@@ -19,19 +19,19 @@ if [ -z "$username" ]; then
 	username="openshift-dev"
 fi
 
-echo "Enter the url for your repository. If it's a specific branch you'd like to use, please append the branch to the url with '#<branch_name>' [default: https://github.com/tariq-islam/bluegreen]: "
+echo "Enter the url for your repository. If it's a specific branch you'd like to use, please append the branch to the url with '#<branch_name>' [default: http://10.1.2.2:3000/tislam/bluegreen]: "
 
 read repository_path
 
 if [ -z "$repository_path" ]; then
-	repository_path="https://github.com/tariq-islam/bluegreen"
+	repository_path="http://10.1.2.2:3000/tislam/bluegreen"
 	echo "Using default repository at : " $repository_path
 fi
 
 oc login "$hostname" --insecure-skip-tls-verify -u "$username"
 oc new-project app-dev --display-name="Application Development Environment"
 oc new-app "$jenkins_image"
-oc new-app php~https://github.com/tariq-islam/bluegreen
-oc create -f https://raw.githubusercontent.com/tariq-islam/bluegreen/master/bluegreen-pipeline.yml
+oc new-app php~http://10.1.2.2:3000/tislam/bluegreen
+oc create -f http://10.1.2.2:3000/tislam/bluegreen/raw/master/bluegreen-pipeline.yml
 oc new-project app-qa --display-name="Application QA Environment"
 oc new-project app-prod --display-name="Application Production Environment"

@@ -7,7 +7,7 @@ metadata:
 spec:
   source:
     git:
-      uri: https://github.com/tariq-islam/bluegreen
+      uri: http://10.1.2.2:3000/tislam/bluegreen
     type: Git
   strategy:
     jenkinsPipelineStrategy:
