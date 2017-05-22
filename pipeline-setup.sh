@@ -31,8 +31,7 @@ fi
 oc login "$hostname" --insecure-skip-tls-verify -u "$username"
 oc new-project app-dev --display-name="Application Development Environment"
 oc new-app "$jenkins_image"
-oc create -f https://raw.githubusercontent.com/tariq-islam/bluegreen/master/bluegreen-is.yml
-oc create -f https://raw.githubusercontent.com/tariq-islam/bluegreen/master/bluegreen-bc.yml
+oc new-app php~https://github.com/tariq-islam/bluegreen
 oc create -f https://raw.githubusercontent.com/tariq-islam/bluegreen/master/bluegreen-pipeline.yml
 oc new-project app-qa --display-name="Application QA Environment"
 oc new-project app-prod --display-name="Application Production Environment"
