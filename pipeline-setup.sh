@@ -4,11 +4,8 @@ echo "Please enter your OpenShift hostname:port (https://<hostname>:<port>). The
 
 read hostname
 
-jenkins_image="jenkins-ephemeral"
-
 if [ -z "$hostname" ]; then
 	hostname="https://10.1.2.2:8443"
-	jenkins_image="jenkins"
 fi
 
 echo "Enter your username (default is openshift-dev): "
@@ -30,8 +27,7 @@ fi
 
 oc login "$hostname" --insecure-skip-tls-verify -u "$username"
 oc new-project app-dev --display-name="Application Development Environment"
-oc new-app "$jenkins_image"
-oc new-app php~http://10.1.2.2:3000/tislam/bluegreen
-oc create -f http://10.1.2.2:3000/tislam/bluegreen/raw/master/bluegreen-pipeline.yml
+oc new-app php~http://10.1.2.2:3000/tislam/bluegreen#pipeline-stages
+oc create -f http://10.1.2.2:3000/tislam/bluegreen/raw/pipeline-stages/bluegreen-pipeline.yml
 oc new-project app-qa --display-name="Application QA Environment"
 oc new-project app-prod --display-name="Application Production Environment"

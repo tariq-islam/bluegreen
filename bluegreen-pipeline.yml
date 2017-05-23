@@ -8,6 +8,7 @@ spec:
   source:
     git:
       uri: http://10.1.2.2:3000/tislam/bluegreen
+      ref: pipeline-stages
     type: Git
   strategy:
     jenkinsPipelineStrategy:
