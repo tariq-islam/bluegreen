@@ -35,6 +35,7 @@ def deployApp(String origProject, String project){
     sh "oc project ${project}"
     sh "oc policy add-role-to-user system:image-puller system:serviceaccount:${project}:default -n ${origProject}"
     sh "oc tag ${origProject}/bluegreen:latest ${project}/bluegreen:latest"
-    openshiftDeploy(deploymentConfig: 'bluegreen')
+    // openshiftDeploy(deploymentConfig: 'bluegreen')
+    sh "oc new-app bluegreen || oc rollout dc bluegreen"
 }
 
