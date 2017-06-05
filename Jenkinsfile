@@ -24,7 +24,7 @@ node {
 
 // Creates a Build and triggers it
 def buildApp(String project){
-    sh "oc login https://192.168.42.95:8443 --insecure-skip-tls-verify -u openshift-dev -p devel"
+    sh "oc login https://192.168.42.95:8443 --insecure-skip-tls-verify -u developer -p developer"
 	sh "oc project ${project}"
     // sh "oc start-build bluegreen"
     openshiftBuild(buildConfig: 'bluegreen', showBuildLogs: 'true')

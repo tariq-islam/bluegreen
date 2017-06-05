@@ -8,12 +8,12 @@ if [ -z "$hostname" ]; then
 	hostname="https://10.1.2.2:8443"
 fi
 
-echo "Enter your username (default is openshift-dev): "
+echo "Enter your username (default is developer): "
 
 read username
 
 if [ -z "$username" ]; then
-	username="openshift-dev"
+	username="developer"
 fi
 
 echo "Enter the url for your repository. If it's a specific branch you'd like to use, please append the branch to the url with '#<branch_name>' [default: http://10.1.2.2:3000/tislam/bluegreen]: "
